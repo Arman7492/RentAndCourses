@@ -10,7 +10,12 @@ class OrderController extends Controller
 {
     public function create(Request $request){
 
-        $date = $request->validate(['order_date' => 'nullable', 'order_number' => 'nullable', 'customer_id' => 'nullable', 'total_amount' => 'nullable', 'id_cell'=> 'nullable']);
+        $date = $request->validate(['order_date' => 'nullable|date', 
+                                    'order_number' => 'integer', 
+                                    'customer_id' => 'nullable', 
+                                    'total_amount' => 'integer', 
+                                    'id_cell'=> 'nullable'
+                                    ]);
                         
         $order = Order::create($date);
 
@@ -18,7 +23,7 @@ class OrderController extends Controller
     }
 
 
-    public function item($id){
+    public function show($id){
         $student = Student::with(['school'])->find($id);
 
         return $student;
@@ -26,28 +31,31 @@ class OrderController extends Controller
     }
 
     public function list(){
-        $schools = Student::get();
+        $customers = Order::get();
 
-        return $schools;
+        return $customers;
        
     }
 
 
        public function update(Request $request, $id){
-        $data = $request->validate(['FirstName' => 'nullable', 
-                                    'SecondName' => 'nullable',     
-                                     'school_id' => 'nullable']);           
+        $data = $request->validate(['order_date' => 'nullable|date', 
+                                    'order_number' => 'integer', 
+                                    'customer_id' => 'nullable', 
+                                    'total_amount' => 'integer', 
+                                    'id_cell'=> 'nullable'
+                                    ]);           
 
-        $student = Student::find($id)->update($data);
+        $order = Order::find($id)->update($data);
       
-        return $student;
+        return $order;
        
     }
 
     public function delete($id){
-        $student = Student::find($id)->delete();
+        $order = Order::find($id)->delete();
 
-        return $student;
+        return $order;
         
     }
 }
