@@ -24,16 +24,16 @@ class OrderController extends Controller
 
 
     public function show($id){
-        $student = Student::with(['school'])->find($id);
+        $order = Order::with(['orderitems'])->find($id);
 
-        return $student;
+        return $order;
        
     }
 
     public function list(){
-        $customers = Order::get();
+        $orders = Order::get();
 
-        return $customers;
+        return $orders;
        
     }
 

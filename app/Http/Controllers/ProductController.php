@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -13,23 +15,23 @@ class ProductController extends Controller
                                     'unit_price' => 'float'
                                     ]);
                         
-        $order = Order::create($date);
+        $product = Product::create($date);
 
-        return $order;        
+        return $product;        
     }
 
 
     public function show($id){
-        $student = Student::with(['school'])->find($id);
+        $product = Product::with(['orderitems'])->find($id);
 
-        return $student;
+        return $product;
        
     }
 
     public function list(){
-        $customers = Order::get();
+        $products = Product::get();
 
-        return $customers;
+        return $products;
        
     }
 
@@ -40,16 +42,16 @@ class ProductController extends Controller
                                     'unit_price' => 'float'
                                 ]);           
 
-        $order = Order::find($id)->update($data);
+        $product = Product::find($id)->update($data);
       
-        return $order;
+        return $product;
        
     }
 
     public function delete($id){
-        $order = Order::find($id)->delete();
+        $product = Product::find($id)->delete();
 
-        return $order;
+        return $product;
         
     }
 }

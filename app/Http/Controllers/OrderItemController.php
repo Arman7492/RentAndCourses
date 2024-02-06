@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\OrderItem;
+
 use Illuminate\Http\Request;
 
 class OrderItemController extends Controller
@@ -18,23 +20,23 @@ class OrderItemController extends Controller
                                     'return_date' => 'nullable|date', 
                                     ]);
                         
-        $order = Order::create($date); 
+        $orderitem = OrderItem::create($date); 
 
-        return $order;        
+        return $orderitem;        
     }
 
 
     public function show($id){
-        $student = Student::with(['school'])->find($id);
+        $orderitem = OrderItem::with(['orderitems'])->find($id);
 
-        return $student;
+        return $orderitem;
        
     }
 
     public function list(){
-        $customers = Order::get();
+        $orderitems = OrderItem::get();
 
-        return $customers;
+        return $orderitems;
        
     }
 
@@ -50,16 +52,16 @@ class OrderItemController extends Controller
                                     'return_date' => 'nullable|date', 
                                     ]);           
 
-        $order = Order::find($id)->update($data);
+        $orderitem = OrderItem::find($id)->update($data);
       
-        return $order;
+        return $orderitem;
        
     }
 
     public function delete($id){
-        $order = Order::find($id)->delete();
+        $orderitem = OrderItem::find($id)->delete();
 
-        return $order;
+        return $orderitem;
         
     }
 }

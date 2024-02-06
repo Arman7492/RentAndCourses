@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Instructor;
+
 use Illuminate\Http\Request;
 
 class InstructorController extends Controller
@@ -20,7 +22,7 @@ class InstructorController extends Controller
 
 
     public function show($id){
-        $instructor = Instructor::with(['orders'])->find($id);
+        $instructor = Instructor::with(['orderitems'])->find($id);
 
         return $instructor;
        
