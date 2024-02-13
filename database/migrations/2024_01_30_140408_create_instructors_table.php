@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->float('rent_price')->default(0);
+            $table->timestamps(false);
         });
     }
 

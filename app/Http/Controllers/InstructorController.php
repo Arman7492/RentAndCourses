@@ -12,7 +12,7 @@ class InstructorController extends Controller
 
         $date = $request->validate(['first_name' => 'nullable', 
                                     'last_name' => 'nullable', 
-                                    'rent_price' => 'float'
+                                    'rent_price' => 'integer'
                                     ]);
                         
         $instructor = Instructor::create($date);
@@ -39,7 +39,7 @@ class InstructorController extends Controller
        public function update(Request $request, $id){
         $data = $request->validate(['first_name' => 'nullable', 
                                     'last_name' => 'nullable', 
-                                    'rent_price' => 'float'
+                                    'rent_price' => 'integer'
                                     ]);           
 
         $instructor = Instructor::find($id)->update($data);

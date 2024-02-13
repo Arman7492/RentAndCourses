@@ -16,7 +16,7 @@ class CustomerController extends Controller
                                     'phone_number' => 'string', 
                                     'password' => 'required'
                                     ]);
-                        
+                                    
         $customer = Customer::create($date);
 
         return $customer;        
