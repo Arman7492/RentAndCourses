@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->float('rent_price')->default(0);
-            $table->timestamps(false);
+            $table->integer('rent_price')->default(0);
+            $table->timestamps();
         });
     }
 

@@ -9,6 +9,8 @@ class Product extends Model
 {
     protected $fillable = ['product_name', 'category_id', 'unit_price'];
     protected $table = 'products';
+    public $timestamps = false;
+    
     use HasFactory;
 
     public function category(){

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('product_name');
             $table->integer('category_id')->nullable(true);
-            $table->float('unit_price')->default(0);
+            $table->integer('unit_price')->default(0);
         });
     }
 

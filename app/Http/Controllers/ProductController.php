@@ -12,7 +12,7 @@ class ProductController extends Controller
 
         $date = $request->validate(['product_name' => 'nullable', 
                                     'category_id' => 'nullable', 
-                                    'unit_price' => 'float'
+                                    'unit_price' => 'integer'
                                     ]);
                         
         $product = Product::create($date);
@@ -39,7 +39,7 @@ class ProductController extends Controller
        public function update(Request $request, $id){
         $data = $request->validate(['product_name' => 'nullable', 
                                     'category_id' => 'nullable', 
-                                    'unit_price' => 'float'
+                                    'unit_price' => 'integer'
                                 ]);           
 
         $product = Product::find($id)->update($data);

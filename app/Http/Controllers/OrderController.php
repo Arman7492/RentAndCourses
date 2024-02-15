@@ -41,9 +41,9 @@ class OrderController extends Controller
        public function update(Request $request, $id){
         $data = $request->validate(['order_date' => 'nullable|date', 
                                     'order_number' => 'integer', 
-                                    'customer_id' => 'nullable', 
+                                    'customer_id' => 'integer', 
                                     'total_amount' => 'integer', 
-                                    'id_cell'=> 'nullable'
+                                    'id_cell'=> 'integer'
                                     ]);           
 
         $order = Order::find($id)->update($data);
