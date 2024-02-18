@@ -14,7 +14,7 @@ class OrderItemController extends Controller
                                     'product_id' => 'nullable', 
                                     'unit_price' => 'float', 
                                     'total_amount' => 'float', 
-                                    'quantity'=> 'integer'
+                                    'quantity'=> 'integer',
                                     'instructor_id' => 'nullable',
                                     'rent_price' => 'float', 
                                     'return_date' => 'nullable|date', 
@@ -46,7 +46,7 @@ class OrderItemController extends Controller
                                     'product_id' => 'nullable', 
                                     'unit_price' => 'float', 
                                     'total_amount' => 'float', 
-                                    'quantity'=> 'integer'
+                                    'quantity'=> 'integer',
                                     'instructor_id' => 'nullable',
                                     'rent_price' => 'float', 
                                     'return_date' => 'nullable|date', 
