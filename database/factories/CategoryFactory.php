@@ -4,10 +4,12 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+use App\Models\Category;
+
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Instructor>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
  */
-class InstructorFactory extends Factory
+class CategoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,10 +19,8 @@ class InstructorFactory extends Factory
     public function definition()
     {
         return [
-            'first_name' => fake()->name(),
-            'last_name' =>  fake()->lastName(),
-            'rent_price' => fake()->randomInteger()
-
+            'category_name' => fake()->word(), 
+            'parent_id' =>  Category::all()->random()->id 
         ];
     }
 }
