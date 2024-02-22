@@ -4,6 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+use App\Models\Instructor;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Instructor>
  */
@@ -19,7 +21,7 @@ class InstructorFactory extends Factory
         return [
             'first_name' => fake()->name(),
             'last_name' =>  fake()->lastName(),
-            'rent_price' => fake()->randomInteger()
+            'rent_price' => fake()->numerify()
 
         ];
     }

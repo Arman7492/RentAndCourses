@@ -12,31 +12,31 @@ class OrderItemController extends Controller
 
         $date = $request->validate(['order_id' => 'nullable',
                                     'product_id' => 'nullable', 
-                                    'unit_price' => 'float', 
-                                    'total_amount' => 'float', 
+                                    'unit_price' => 'integer', 
+                                    'total_amount' => 'integer', 
                                     'quantity'=> 'integer',
                                     'instructor_id' => 'nullable',
-                                    'rent_price' => 'float', 
+                                    'rent_price' => 'integer', 
                                     'return_date' => 'nullable|date', 
                                     ]);
                         
-        $orderitem = OrderItem::create($date); 
+        $orderItem = OrderItem::create($date); 
 
-        return $orderitem;        
+        return $orderItem;        
     }
 
 
     public function show($id){
-        $orderitem = OrderItem::with(['orderitems'])->find($id);
+        $orderItem = OrderItem::with(['orderItems'])->findOrFail($id);
 
-        return $orderitem;
+        return $orderItem;
        
     }
 
     public function list(){
-        $orderitems = OrderItem::get();
+        $orderItems = OrderItem::get();
 
-        return $orderitems;
+        return $orderItems;
        
     }
 
@@ -44,24 +44,24 @@ class OrderItemController extends Controller
        public function update(Request $request, $id){
         $data = $request->validate(['order_id' => 'nullable',
                                     'product_id' => 'nullable', 
-                                    'unit_price' => 'float', 
-                                    'total_amount' => 'float', 
+                                    'unit_price' => 'integer', 
+                                    'total_amount' => 'integer', 
                                     'quantity'=> 'integer',
                                     'instructor_id' => 'nullable',
-                                    'rent_price' => 'float', 
+                                    'rent_price' => 'integer', 
                                     'return_date' => 'nullable|date', 
                                     ]);           
 
-        $orderitem = OrderItem::find($id)->update($data);
+        $orderItem = OrderItem::findOrFail($id)->update($data);
       
-        return $orderitem;
+        return $orderItem;
        
     }
 
     public function delete($id){
-        $orderitem = OrderItem::find($id)->delete();
+        $orderItem = OrderItem::findOrFail($id)->delete();
 
-        return $orderitem;
+        return $orderItem;
         
     }
 }
