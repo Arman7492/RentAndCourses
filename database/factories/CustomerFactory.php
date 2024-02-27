@@ -22,7 +22,7 @@ class CustomerFactory extends Factory
             'first_name' => fake()->name(),
             'last_name' =>  fake()->lastName(),
             'phone_number' => fake()->numerify('+#######'),
-            'password' => fake()->bothify('?????-#####'),
+            'password' => fake()->bothify('?????-#####')
         ];
     }
 }

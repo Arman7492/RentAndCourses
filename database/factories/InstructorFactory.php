@@ -20,7 +20,7 @@ class InstructorFactory extends Factory
     {
         return [
             'first_name' => fake()->name(),
-            'last_name' =>  fake()->lastName(),
+            'last_name' => fake()->lastName(),
             'rent_price' => fake()->numerify()
 
         ];

@@ -22,7 +22,7 @@ class ProductController extends Controller
 
 
     public function show($id){
-        $product = Product::with(['orderitems'])->find($id);
+        $product = Product::with(['orderitems'])->findOrFail($id);
 
         return $product;
        
@@ -42,14 +42,14 @@ class ProductController extends Controller
                                     'unit_price' => 'integer'
                                 ]);           
 
-        $product = Product::find($id)->update($data);
+        $product = Product::findOrFail($id)->update($data);
       
         return $product;
        
     }
 
     public function delete($id){
-        $product = Product::find($id)->delete();
+        $product = Product::findOrFail($id)->delete();
 
         return $product;
         

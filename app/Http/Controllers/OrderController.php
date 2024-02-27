@@ -24,7 +24,7 @@ class OrderController extends Controller
 
 
     public function show($id){
-        $order = Order::with(['orderitems'])->find($id);
+        $order = Order::with(['orderitems'])->findOrFail($id);
 
         return $order;
        
@@ -46,14 +46,14 @@ class OrderController extends Controller
                                     'id_cell'=> 'integer'
                                     ]);           
 
-        $order = Order::find($id)->update($data);
+        $order = Order::findOrFail($id)->update($data);
       
         return $order;
        
     }
 
     public function delete($id){
-        $order = Order::find($id)->delete();
+        $order = Order::findOrFail($id)->delete();
 
         return $order;
         

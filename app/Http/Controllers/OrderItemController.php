@@ -27,7 +27,7 @@ class OrderItemController extends Controller
 
 
     public function show($id){
-        $orderItem = OrderItem::with(['orderItems'])->findOrFail($id);
+        $orderItem = OrderItem::with(['orderitems'])->findOrFail($id);
 
         return $orderItem;
        

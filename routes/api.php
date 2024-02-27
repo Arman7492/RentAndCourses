@@ -75,7 +75,7 @@ Route::post('/updateInstructors/{id}', [InstructorController::class, 'update']);
 Route::delete('/deleteInstructors/{id}', [InstructorController::class, 'delete']);
 
 
-Route::get('/orderitems', [OrderItemController::class, 'list']);
+Route::get('/orderItems', [OrderItemController::class, 'list']);
 
 Route::post('/createOrderItems', [OrderItemController::class, 'create']);
 

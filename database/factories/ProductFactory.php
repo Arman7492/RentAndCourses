@@ -21,8 +21,8 @@ class ProductFactory extends Factory
     {
         return [
             'product_name' => fake()->word(), 
-            'category_id' => Category::all()->random()->id 
-            'unit_price' => fake()->numberBetween(3000, 75000),
+            'category_id' => Category::all()->random()->id,
+            'unit_price' => fake()->numberBetween(3000, 75000)
 
         ];
     }

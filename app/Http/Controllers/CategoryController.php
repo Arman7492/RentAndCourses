@@ -21,7 +21,7 @@ class CategoryController extends Controller
 
 
     public function show($id){
-        $category = Category::with(['products'])->find($id);
+        $category = Category::with(['products'])->findOrFail($id);
 
         return $category;
        
@@ -40,14 +40,14 @@ class CategoryController extends Controller
                                     'parent_id' => 'nullable']); 
                                                   
 
-        $category = Category::find($id)->update($data);
+        $category = Category::findOrFail($id)->update($data);
       
         return $category;
        
     }
 
     public function delete($id){
-        $category = Category::find($id)->delete();
+        $category = Category::findOrFail($id)->delete();
 
         return $category;
         

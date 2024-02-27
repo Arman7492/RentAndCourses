@@ -22,7 +22,7 @@ class InstructorController extends Controller
 
 
     public function show($id){
-        $instructor = Instructor::with(['orderitems'])->find($id);
+        $instructor = Instructor::with(['orderitems'])->findOrFail($id);
 
         return $instructor;
        
@@ -42,14 +42,14 @@ class InstructorController extends Controller
                                     'rent_price' => 'integer'
                                     ]);           
 
-        $instructor = Instructor::find($id)->update($data);
+        $instructor = Instructor::findOrFail($id)->update($data);
       
         return $instructor;
        
     }
 
     public function delete($id){
-        $instructor = Instructor::find($id)->delete();
+        $instructor = Instructor::findOrFail($id)->delete();
 
         return $instructor;
         

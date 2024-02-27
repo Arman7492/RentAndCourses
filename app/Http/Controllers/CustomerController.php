@@ -16,7 +16,7 @@ class CustomerController extends Controller
                                     'phone_number' => 'string', 
                                     'password' => 'required'
                                     ]);
-                                    
+                            
         $customer = Customer::create($date);
 
         return $customer;        
@@ -24,7 +24,7 @@ class CustomerController extends Controller
 
 
     public function show($id){
-        $customer = Customer::with(['orders'])->find($id);
+        $customer = Customer::with(['orders'])->findOrFail($id);
 
         return $customer;
        
@@ -45,14 +45,14 @@ class CustomerController extends Controller
                                     'password' => 'required'
                                     ]);           
 
-        $customer = Customer::find($id)->update($data);
+        $customer = Customer::findOrFail($id)->update($data);
       
         return $customer;
        
     }
 
     public function delete($id){
-        $customer = Customer::find($id)->delete();
+        $customer = Customer::findOrFail($id)->delete();
 
         return $customer;
         
