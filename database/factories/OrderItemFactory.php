@@ -29,7 +29,7 @@ class OrderItemFactory extends Factory
             'quantity' => fake()->numberBetween(1, 30),
             'instructor_id' => Instructor::all()->random()->id,
             'rent_price' => fake()->numerify(),
-            'return_date' => fake()->dateTime()
+            'return_date' => fake()->date()
         ];
     }
 }

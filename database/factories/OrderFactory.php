@@ -20,7 +20,7 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            'order_date' => fake()->dateTime(),
+            'order_date' => fake()->date(),
             'order_number' => fake()->numberBetween(1, 100),
             'customer_id' => Customer::all()->random()->id,
             'total_amount' => fake()->numberBetween(500, 100000),

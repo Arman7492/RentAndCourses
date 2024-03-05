@@ -14,12 +14,12 @@ class CustomerTest extends TestCase
      *
      * @return void
      */
-    // public function test_example()
-    // {
-    //     $response = $this->get('/');
+    public function test_example()
+    {
+        $response = $this->get('/');
 
-    //     $response->assertStatus(200);
-    // }
+        $response->assertStatus(200);
+    }
 
     public function test_asserting_an_exact_json_match(): void
     {
@@ -32,5 +32,14 @@ class CustomerTest extends TestCase
             ->assertJsonPath('last_name',$data['last_name'])
             ->assertJsonPath('phone_number',$data['phone_number'])
             ->assertJsonPath('password',$data['password']);
+    }
+
+    public function testDatabase()
+    {
+        // Make call to application...
+     
+        $this->assertDatabaseHas('customers', [
+            'last_name' => 'Spencer'
+        ]);
     }
 }
