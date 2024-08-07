@@ -37,8 +37,23 @@ class CategoryTest extends TestCase
         // Make call to application...
      
         $this->assertDatabaseHas('categories', [
-            'category_name' => 'Skis'
+            'category_name' => 'Glasswear'
         ]);
     }
+
+
+    // public function test_wrong_disable_Categories_by_id()
+    // {
+    //     $response = $this->post('/api/createCategories/1500');
+
+    //     $response->assertStatus(500);
+    // }
+
+    // public function test_get_by_id_when_id_is_not_numeric()
+    // {
+    //     $response = $this->get('/api/showCategories/invalid_id');
+
+    //     $response->assertStatus(500);
+    // }
     
 }

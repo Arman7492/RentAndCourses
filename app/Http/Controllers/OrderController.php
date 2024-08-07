@@ -10,7 +10,7 @@ class OrderController extends Controller
 {
     public function create(Request $request){
 
-        $date = $request->validate(['order_date' => 'date', 
+        $date = $request->validate(['order_date' => 'nullable|date', 
                                     'order_number' => 'integer', 
                                     'customer_id' => 'nullable', 
                                     'total_amount' => 'integer', 

@@ -43,7 +43,7 @@ class OrderItemTest extends TestCase
         // Make call to application...
      
         $this->assertDatabaseHas('orderitems', [
-            'instructor_id' => '1186'
+            'instructor_id' => '401'
         ]);
     }
 
