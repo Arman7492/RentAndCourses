@@ -48,7 +48,7 @@ Route::post('/createProducts', [ProductController::class, 'create']);
 
 Route::get('/showProducts/{id}', [ProductController::class, 'show']);
 
-Route::post('/updateProducts/{id}', [ProductController::class, 'update']);
+Route::put('/updateProducts/{id}', [ProductController::class, 'update']);
 
 Route::delete('/deleteProducts/{id}', [ProductController::class, 'delete']);
 

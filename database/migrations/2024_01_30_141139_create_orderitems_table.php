@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('quantity')->default(0);
             $table->integer('instructor_id')->nullable(true);
             $table->float('rent_price')->default(0);
-            $table->datetime('return_date')->nullable(false);            
+            $table->datetime('return_date')->nullable(false);           
         });
     }
 

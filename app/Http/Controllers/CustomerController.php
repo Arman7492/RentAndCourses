@@ -39,8 +39,8 @@ class CustomerController extends Controller
 
 
        public function update(Request $request, $id){
-        $data = $request->validate(['first_name' => 'nullable', 
-                                    'last_name' => 'nullable',
+        $data = $request->validate([ 'first_name' => 'required|string|max:255',
+                                    'last_name' => 'required|string|max:255',
                                     'phone_number' => 'string', 
                                     'password' => 'required'
                                     ]);           

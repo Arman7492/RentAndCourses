@@ -155,7 +155,7 @@ return [
     */
 
     'providers' => [
-
+        Fruitcake\Cors\CorsServiceProvider::class,
         /*
          * Laravel Framework Service Providers...
          */
@@ -193,9 +193,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-        Fruitcake\Cors\CorsServiceProvider::class,
-
+        App\Providers\RouteServiceProvider::class,        
     ],
 
     /*

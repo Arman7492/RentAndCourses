@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
 use App\Models\Category;
 
 /**
@@ -19,8 +18,35 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            'category_name' => fake()->word(), 
-            'parent_id' =>  Category::all()->random()->id 
+            'category_name' => $this->faker->word(), // Генерация случайного слова как названия категории
+            'parent_id' => null // По умолчанию родительская категория отсутствует (корневая категория)
         ];
     }
 }
+
+
+
+// namespace Database\Factories;
+
+// use Illuminate\Database\Eloquent\Factories\Factory;
+
+// use App\Models\Category;
+
+// /**
+//  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
+//  */
+// class CategoryFactory extends Factory
+// {
+//     /**
+//      * Define the model's default state.
+//      *
+//      * @return array<string, mixed>
+//      */
+//     public function definition()
+//     {
+//         return [
+//             'category_name' => fake()->word(), 
+//             'parent_id' =>  Category::all()->random()->id 
+//         ];
+//     }
+// }
